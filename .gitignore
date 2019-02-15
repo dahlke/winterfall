@@ -1,0 +1,9 @@
+web/frontend/build/
+node_modules/
+venv/
+.vscode/
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform/
+secrets/*

@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: winterfall-web
+  namespace: winterfall
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      role: web
+  minReadySeconds: 20
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+  template:
+    metadata:
+      name: winterfall-web
+      labels:
+        lang: python
+        role: web
+    spec:
+      containers:
+        - name: winterfall-web
+          image: eklhad/winterfall-web:0.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          env:
+            - name: PG_DB_ADDR
+              valueFrom:
+                secretKeyRef:
+                  name: winterfall-pg-creds
+                  key: PG_DB_ADDR
+            - name: PG_DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: winterfall-pg-creds
+                  key: PG_DB_NAME
+            - name: PG_DB_UN
+              valueFrom:
+                secretKeyRef:
+                  name: winterfall-pg-creds
+                  key: PG_DB_UN
+            - name: PG_DB_PW
+              valueFrom:
+                secretKeyRef:
+                  name: winterfall-pg-creds
+                  key: PG_DB_PW
