@@ -4,7 +4,7 @@ metadata:
   name: winterfall-worker
   namespace: winterfall
 spec:
-  schedule: "* 1 * * *"
+  schedule: "*/1 * * * *"
   jobTemplate:
     spec:
       template:

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: winterfall-vault
+  namespace: winterfall
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      role: vault
+  minReadySeconds: 20
+  template:
+    metadata:
+      name: winterfall-web
+      labels:
+        lang: python
+        role: web
+    spec:
+      containers:
+        - name: winterfall-vault
+          image: vault:1.0.3
+          imagePullPolicy: Always

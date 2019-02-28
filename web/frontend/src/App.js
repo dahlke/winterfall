@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import AllResortsChart from './AllResortsChart';
+import AllResortsChart from './chart/AllResortsChart';
 import './App.scss';
 
 class App extends Component {
