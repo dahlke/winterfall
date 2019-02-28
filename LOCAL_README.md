@@ -27,8 +27,8 @@ echo $MINIKUBE_HOST_IP
 
 export PG_DB_ADDR=$MINIKUBE_HOST_IP
 export PG_DB_NAME="winterfall"
-export PG_DB_UN="winterfall"
-export PG_DB_PW="winterfall"
+export PG_DB_UN="postgres"
+export PG_DB_PW="postgres"
 ```
 
 ### Configuring `kubectl` and your NameSpace
@@ -58,6 +58,8 @@ Open up a separate tab, set your AWS env vars and run `watch kubectl get svc,ep,
 ```
 kubectl apply -f kubernetes/deployments/winterfall-web-deploy.yaml
 kubectl apply -f kubernetes/services/winterfall-web-svc.yaml
+
+minikube service winterfall-web
 ```
 
 #### Configure the CronJob to Scrape Snowfall Data
