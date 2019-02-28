@@ -73,7 +73,7 @@ kubectl get nodes
 kubectl apply -f kubernetes/namespaces/winterfall-ns.yaml
 
 # update the namespace for your new contexts
-kubectl config set-context $(kubectl config current-context) --namespace=winterfall;
+kubectl config set-context $(kubectl config current-context) --namespace=winterfall
 
 # store the DB env vars in our new context and namespace as a Kubernetes Secret
 kubectl create secret generic winterfall-pg-creds \
@@ -90,8 +90,8 @@ Open up a separate tab, set your AWS env vars and run `watch kubectl get svc,ep,
 Open up another new tab and set your AWS credential env vars again, then run.
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
 kubectl apply -f kubernetes/eks-specific/service-accounts/eks-admin-sa.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep eks-admin | awk '{print $1}')
 kubectl proxy
 ```

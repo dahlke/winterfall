@@ -1,11 +1,11 @@
 SHELL := /bin/bash
 CWD := $(shell pwd)
-WEB_APP_NAME = winterfall
+APP_NAME = winterfall
 
 DOCKER_HUB_USER=eklhad
-WEB_IMAGE_NAME=${WEB_APP_NAME}-web
+WEB_IMAGE_NAME=${APP_NAME}-web
 WEB_IMAGE_VERSION=0.1
-WORKER_IMAGE_NAME=${WEB_APP_NAME}-worker
+WORKER_IMAGE_NAME=${APP_NAME}-worker
 WORKER_IMAGE_VERSION=0.1
 
 ##########################

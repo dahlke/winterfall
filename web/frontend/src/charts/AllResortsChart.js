@@ -8,7 +8,7 @@ const HC_VAGRANT_BLUE_LIGHT = "#66A2FF";
 const HC_VAGRANT_BLUE_DARK = "#1563FF";
 const HC_VAGRANT_BLUE_DARKEST = "#08368B";
 
-// TODO: pass these in as globals?
+// TODO: these values should be app state, should be sent from the server. 
 const HOST = window.location.hostname;
 const PORT = window.location.port;
 const CONTAINER_ID_SERVICE_URL = `http://${HOST}:${PORT}/container_id`;
