@@ -1,5 +1,4 @@
 # [WIP] Winterfall
-_HashiCorp SE Hackathon Project (llarsen & dahlke)_
 
 #### Quick Links
 - [Asana Project](https://app.asana.com/0/1108361432591475/1108361432591511)
