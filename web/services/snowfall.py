@@ -8,8 +8,6 @@ PG_DB_NAME = os.environ["PG_DB_NAME"]
 PG_DB_UN = os.environ["PG_DB_UN"]
 PG_DB_PW = os.environ["PG_DB_PW"]
 
-import os
-print(os.environ['HOME'])
 
 class ServiceSnowfall:
 

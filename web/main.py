@@ -27,7 +27,6 @@ def container_id():
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
-    # Serve React App
     if path != "" and os.path.exists("frontend/build/" + path):
         return send_from_directory('frontend/build', path)
     else:
